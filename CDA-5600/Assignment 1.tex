@@ -101,7 +101,19 @@ For $\sigma_z, eigenbasis =  \left(
 $|\<x_1 | y_1 \>|^2 = \frac{1}{2} \left(\begin{array}{cc} 1 & 1 \end{array}\right)  \left(\begin{array}{cc} 1 \\ i\end{array}\right) = \left( \frac{\sqrt{1 + 1}}{2}\right)^2 = \frac{2}{4} = \frac{1}{2} $ \\
 $|\<x_2 | y_1 \>|^2 = \frac{1}{2} \left(\begin{array}{cc} 1 & -1\end{array}\right)  \left(\begin{array}{cc} 1 \\ i\end{array}\right) = \left( \frac{\sqrt{1 + (-1)^2}}{2}\right)^2 = \frac{2}{4} = \frac{1}{2} $ \\
 $|\<x_1 | y_2 \>|^2 = \frac{1}{2} \left(\begin{array}{cc} 1 & 1\end{array}\right)  \left(\begin{array}{cc} 1 \\ -i\end{array}\right) = \left( \frac{\sqrt{1 + (-1)^2}}{2}\right)^2 = \frac{2}{4} = \frac{1}{2} $ \\
-$|\<x_2 | y_2 \>|^2 = \frac{1}{2} \left(\begin{array}{cc} 1 & -1\end{array}\right)  \left(\begin{array}{cc} 1 \\ -i\end{array}\right) = \left( \frac{\sqrt{1 + 1}}{2}\right)^2 = \frac{2}{4} = \frac{1}{2} $
+$|\<x_2 | y_2 \>|^2 = \frac{1}{2} \left(\begin{array}{cc} 1 & -1\end{array}\right)  \left(\begin{array}{cc} 1 \\ -i\end{array}\right) = \left( \frac{\sqrt{1 + 1}}{2}\right)^2 = \frac{2}{4} = \frac{1}{2} $ \newline \newline
+
+\noindent
+$|\<x_1 | z_1 \>|^2 = \frac{1}{\sqrt 2} \left(\begin{array}{cc} 1 & 1 \end{array}\right)  \left(\begin{array}{cc} 1 \\ 0\end{array}\right) = \left( \frac{\sqrt{1 + 0}}{\sqrt 2}\right)^2 = \frac{1}{2} $ \\
+$|\<x_2 | z_1 \>|^2 = \frac{1}{\sqrt 2} \left(\begin{array}{cc} 1 & -1 \end{array}\right)  \left(\begin{array}{cc} 1 \\ 0\end{array}\right) = \left( \frac{\sqrt{1 + 0}}{\sqrt 2}\right)^2 = \frac{1}{2} $ \\
+$|\<x_1 | z_2 \>|^2 = \frac{1}{\sqrt 2} \left(\begin{array}{cc} 1 & 1\end{array}\right)  \left(\begin{array}{cc} 0 \\ 1\end{array}\right) = \left( \frac{\sqrt{0 + 1^2}}{\sqrt 2}\right)^2 = \frac{1}{2} $ \\
+$|\<x_2 | z_2 \>|^2 = \frac{1}{\sqrt 2} \left(\begin{array}{cc} 1 & -1\end{array}\right)  \left(\begin{array}{cc} 0 \\ 1\end{array}\right) = \left( \frac{\sqrt{0 + (-1)^2}}{\sqrt 2}\right)^2  = \frac{1}{2} $ \newline \newline
+
+\noindent
+$|\<z_1 | y_1 \>|^2 = \frac{1}{\sqrt 2} \left(\begin{array}{cc} 1 & 0 \end{array}\right)  \left(\begin{array}{cc} 1 \\ i\end{array}\right) = \left( \frac{\sqrt{1 + 0}}{\sqrt 2}\right)^2 = \frac{1}{2} $ \\
+$|\<z_2 | y_1 \>|^2 = \frac{1}{\sqrt 2} \left(\begin{array}{cc} 0 & 1\end{array}\right)  \left(\begin{array}{cc} 1 \\ i\end{array}\right) = \left( \frac{\sqrt{0 + 1^2}}{\sqrt 2}\right)^2 = \frac{1}{2} $ \\
+$|\<z_1 | y_2 \>|^2 = \frac{1}{\sqrt 2} \left(\begin{array}{cc} 1 & 0\end{array}\right)  \left(\begin{array}{cc} 1 \\ -i\end{array}\right) = \left( \frac{\sqrt{1^2 + 0}}{\sqrt 2}\right)^2  = \frac{1}{2} $ \\
+$|\<z_2 | y_2 \>|^2 = \frac{1}{\sqrt 2} \left(\begin{array}{cc} 0 & 1\end{array}\right)  \left(\begin{array}{cc} 1 \\ -i\end{array}\right) = \left( \frac{\sqrt{0 + (-1)^2}}{\sqrt 2}\right)^2 = \frac{1}{2} $
 
 
 \newpage
@@ -118,6 +130,35 @@ For $A,B\in\C^{d\times d}$, define
 \]
 Prove that the above map defines an inner product on the vector space $\C^{d\times d}$. (In the literature, this inner product is called the trace inner product or Hilbert-Schmidt inner product.)
 
+\noindent
+\newline
+We need to show that the map follows the properties of an inner product on $\mathcal{H}$:
+
+1. Linearity in the second argument \\
+	
+	\quad Let $X = B + C$
+	
+	\quad Then $Tr(A,X) = Tr(A^\dagger (B+C)) = Tr(A^\dagger B) + Tr(A^\dagger C)$
+
+2. Conjugate-commutativity
+
+	\quad $\<A,B\> = \<B,A\>*$
+
+	\quad Since the $Tr$ is transpose invariant and distributive over conjugate,
+	
+	\quad $\<A|B\>_{Tr} = Tr(A^\dagger B) = Tr((BA^\dagger)^*) = \<B|A\>_{Tr} $
+	
+3. Non-negativity
+	
+	\quad $ \<A|A\>_{Tr} = Tr(A^\dagger A) = \sum_{r=1}^d C_{r,r} $ 
+
+	\quad $ = \sum_{r=1}^n \sum_{m=1}^n \overline{a_{r,m}} a_{r,m} $
+	
+	\quad $ = \sum_{r=1}^n \sum_{m=1}^n |a_{r,m}|^2$
+	
+	\quad $ = \sum_{r,m=1}^n |a_{r,m}|^2$
+
+	\quad This shows that the $\<A|A\>_{Tr} $ will always be positive
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PROBLEM 3
@@ -127,7 +168,7 @@ Prove that the above map defines an inner product on the vector space $\C^{d\tim
 \noindent
 Define the matrices $X,Z\in\C^{d\times d}$ as follows
 \begin{eqnarray}
-X & = & \sum_{k=0}^d |k+1\>\<k| \\
+X & = & \sum_{k=0}^{d-1} |k+1\>\<k| \\
 Z & = & \sum_{\ell=0}^{d-1} \omega^\ell |\ell\>\<\ell|
 \end{eqnarray}
 where the addition is modulo $k+1$ and $\omega=e^{2\pi i/d}$ is a primitive $d$th root of unity. Show that the $d^2$ matrices
