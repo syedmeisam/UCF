@@ -136,9 +136,9 @@ We need to show that the map follows the properties of an inner product on $\mat
 
 1. Linearity in the second argument \\
 	
-	\quad Let $X = B + C$
+	\quad Let $X = B + C \in\C^{d\times d}$
 	
-	\quad Then $Tr(A,X) = Tr(A^\dagger (B+C)) = Tr(A^\dagger B) + Tr(A^\dagger C)$
+	\quad Then $Tr(A,X) = Tr(A^\dagger (B+C)) = Tr(A^\dagger B) + Tr(A^\dagger C)$ \\
 
 2. Conjugate-commutativity
 
@@ -146,7 +146,7 @@ We need to show that the map follows the properties of an inner product on $\mat
 
 	\quad Since the $Tr$ is transpose invariant and distributive over conjugate,
 	
-	\quad $\<A|B\>_{Tr} = Tr(A^\dagger B) = Tr((BA^\dagger)^*) = \<B|A\>_{Tr} $
+	\quad $\<A|B\>_{Tr} = Tr(A^\dagger B) = Tr((BA^\dagger)^*) = \<B|A\>_{Tr} $ \\ 
 	
 3. Non-negativity
 	
@@ -176,5 +176,14 @@ where the addition is modulo $k+1$ and $\omega=e^{2\pi i/d}$ is a primitive $d$t
 M^{(a,b)} = X^a Z^b
 \]
 where $a,b\in\{0,\ldots, d-1\}$ form an orthonormal basis with respect to the trace inner product. Implement methods in Python that construct these matrices and compute the trace inner product for all pairs. (The above collection of matrices is called a unitary error basis in the literature and is used, for instance, in the theory of quantum error correcting codes and quantum channels for qudit systems. It is a generalization of the Pauli basis for a qubit system to a qudit system.)
+
+
+$X^a$ can be broken down into a set of kets with the following values: \\
+
+	\quad $ X^a = \{ |a\>, |a+1\>, ... |a+d-1\> \} $ where each ket is modulo d \\
+	
+$Z^b$ is a diagonal matrix where each element along the diagonal is $W^b$ where $W = w^l$. Hence for $d=3$, \\
+
+	\quad $Z^b = \left(\begin{array}{ccc} 1 & 0 & 0 \\ 0 & w^b & 0 \\ 0 & 0 & w^{2b} \end{array}\right)	$
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6980) (preloaded format=pdflatex 2019.2.12)  12 FEB 2019 17:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6980) (preloaded format=pdflatex 2019.2.12)  14 FEB 2019 13:21
 entering extended mode
 **"./Assignment 1.tex"
 ("Assignment 1.tex"
@@ -254,7 +254,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
-[4] [5] ("Assignment 1.aux") ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+[5] ("Assignment 1.aux") ) 
 Here is how much of TeX's memory you used:
  3670 strings out of 494865
  43157 string characters out of 3178257
@@ -263,18 +288,18 @@ Here is how much of TeX's memory you used:
  9465 words of font info for 38 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  27i,8n,27p,1412b,142s stack positions out of 5000i,500n,10000p,200000b,50000s
-</home/meisam/.miktex/texmfs/install/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/
-public/amsfonts/cm/cmmi12.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/
-public/amsfonts/cm/cmmi8.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/pu
-blic/amsfonts/cm/cmr6.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/publ
-ic/amsfonts/cm/cmr8.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/public/
-amsfonts/symbols/msbm10.pfb>
-Output written on "Assignment 1.pdf" (5 pages, 113940 bytes).
+</home/meisam/.miktex/texmfs/install/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/public
+/amsfonts/cm/cmr6.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/public/a
+msfonts/cm/cmr8.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/public/ams
+fonts/cm/cmsy8.pfb></home/meisam/.miktex/texmfs/install/fonts/type1/public/amsf
+onts/symbols/msbm10.pfb>
+Output written on "Assignment 1.pdf" (5 pages, 116108 bytes).
 PDF statistics:
  58 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
