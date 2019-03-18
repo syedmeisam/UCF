@@ -37,7 +37,7 @@ def inner_product(dimension, a, b):
     for i in range(0, dimension):
         ket[i] = (a+i) % dimension
 
-    print(ket)
+    #print(ket)
     print(are_orthogonal(X, Z))
 
 def main(dimension):
