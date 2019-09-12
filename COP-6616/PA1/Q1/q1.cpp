@@ -1,27 +1,27 @@
 #include <iostream>
 #include <pthread.h>
-#include <semaphore.h>
 #include <bits/stdc++.h> 
 #include <chrono> 
 #include <queue> 
 #include <atomic>
+#include <semaphore.h>
 
 using namespace std;
 
-#define NUM_THREADS 10
+#define NUM_THREADS 1
 #define LIMIT 100000000
 #define LARGEST_NUMBER 10
 
-int counter = 2;
-long long	 sum = 0;
+int N = 2;
+std::atomic<int> counter(N);
+long long sum = 0;
+std::atomic<long long> sum_counter(sum);
 int primesFound = 0;
-list<int> sorted;
+std::atomic<int> prime_counter(primesFound);
 
-sem_t sumLock;
-sem_t counterLock;
-sem_t arrayLock;
-sem_t primeLock;
+list<int> sorted;
 sem_t sortedLock;
+
 
 struct threadData {
 	int thread_id;
@@ -29,23 +29,12 @@ struct threadData {
 
 int getNextJob() {
 	int r;
-	sem_wait(&counterLock);	// begin critical section
 	r = counter;
 	if (counter == 2) counter = 3;
-	else counter += 2;
-	sem_post(&counterLock);	// end critical section
-	
-	return r;
-}
-
-bool isSmallest(int n) {
-	list<int>::iterator it = sorted.begin();
-	for (; it!=sorted.end(); it++) {
-		if (n > *it) {
-			return false;
-		}
+	else {
+		if (counter < LIMIT) atomic_fetch_add(&counter, 2);
 	}
-	return true;
+	return r;
 }
 
 void addToQueue(int prime) {
@@ -66,15 +55,11 @@ bool isPrime(int n) {
 }
 
 void addToSum(int prime) {
-	sem_wait(&sumLock);
-	sum += prime;
-	sem_post(&sumLock);
+	atomic_fetch_add(&sum_counter, (long long) prime);
 }
 
 void incrementPrimeCount() {
-	sem_wait(&primeLock);
-	primesFound++;
-	sem_post(&primeLock);
+	atomic_fetch_add(&prime_counter, 1);
 }
 
 void* runJob(void*) {
@@ -95,15 +80,8 @@ int main() {
 	pthread_t threads[NUM_THREADS];
 	struct threadData td[NUM_THREADS];
 
-	sem_init(&counterLock, 0, 1);
-	sem_init(&arrayLock, 0, 1);
-	sem_init(&sumLock, 0, 1);
-	sem_init(&primeLock, 0, 1);
-	sem_init(&sortedLock, 0, 1);
-
 	auto start = chrono::high_resolution_clock::now(); 
 	for (int i = 0; i < NUM_THREADS; i++) {
-		cout << "main(): creating thread: " << i << endl;
 		td[i].thread_id = i;
 		int rc = pthread_create(&threads[i], NULL, runJob, NULL);
 	}
@@ -116,8 +94,8 @@ int main() {
 	timeElapsed *= 1e-9; 
 
 	cout << fixed << timeElapsed << setprecision(5);
-	cout << ' ' << primesFound; 
-	cout << ' ' << sum << endl;
+	cout << ' ' << prime_counter; 
+	cout << ' ' << sum_counter << endl;
 
 	sorted.sort();
 	list<int>::iterator it = sorted.begin();
